@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Index</title>
+</head>
+<body>
+	<h1>Index Page</h1>
+	<h2>Name of owner is : <span th:text="${#strings.toUpperCase(name)}"></span> <span th:text="${#strings.length(name)}"></span> </h2>
+	
+	<h2>Current date is : <span th:text="${#strings.toUpperCase(date)}"></span></h2>
+	
+	<div th:with="a=5 , b=6 , n = ${name}">
+	<h1>a= <span th:text="${a}"></span> </h1>
+	<h1>b= <span th:text="${b}"></span> </h1>
+	<h1>name= <span th:text="${name}"></span> </h1>
+	</div>
+</body>
+</html>
