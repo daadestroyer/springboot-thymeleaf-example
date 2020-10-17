@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Iterate</title>
+</head>
+<body>
+	<h1>Going to traverse elements in collection</h1>
+	<h1 th:text="${friends}"></h1>
+	<ul>
+		<li th:each="frnd,status : ${friends}">
+		<span
+			th:style="${status.odd} ? 'color:red;font-weight:bold' : 'color:blue' "
+			th:text="${status.index+1}+' '+${frnd}"></span></li>
+	</ul>
+</body>
+</html>

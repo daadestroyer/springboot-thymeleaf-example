@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Condition</title>
+</head>
+<body>
+	<h1>Conditional Statement</h1>
+	<h2>
+		User is : <span th:style="${state} ? 'color:green' : 'color:red' "
+					 th:text="${state} ? 'ACTIVE' : 'NOT-ACTIVE' "> </span>
+	</h2>
+	
+	<h2 th:style="${gender=='M'} ? 'color:red' : 'color:black' " th:if="${gender}=='M'"> Male</h2>
+	<h2 th:style="${gender=='F'} ? 'color:blue' : 'color:black' " th:if="${gender}=='F'">Female</h2>
+
+	<div th:switch="${#lists.size(mylist)}">
+		<h3 th:case="'0'">List Contain Zero Elements</h3>
+		<h3 th:case="'1'">List Contain One Elements</h3>
+		<h3 th:case="*">
+			List Contain More Than One Element
+		</h3>
+	</div>
+</body>
+</html>
